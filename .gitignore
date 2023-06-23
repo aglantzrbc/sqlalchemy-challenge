@@ -1,5 +1,8 @@
-# Byte-compiled / optimized / DLL files
+# Project-specific adds
 Starter_Code/
+.ipynb_checkpoints/
+
+# Byte-compiled / optimized / DLL files
 
 __pycache__/
 *.py[cod]
