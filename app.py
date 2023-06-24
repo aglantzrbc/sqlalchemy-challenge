@@ -57,3 +57,6 @@ def welcome():
         f"-- Min, Average & Max Temperatures for Date Range: /api/v1.0/trip/yyyy-mm-dd/yyyy-mm-dd<br>"
         f"(Note: to access values between a start and end data range, enter both dates using format: YYYY-mm-dd/YYYY-mm-dd)"
     )
+
+    if __name__ == '__main__':
+        app.run(debug=True)
