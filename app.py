@@ -33,6 +33,12 @@ session = Session(engine)
 #################################################
 app = Flask(__name__)
 
+# Print the address and IP when the application starts
+@app.before_first_request
+def print_server_info():
+    server_address = app.config.get('SERVER_NAME')
+    server_ip = app.config.get('SERVER_HOST')
+    print(f"Flask application is running on {server_address} ({server_ip})")
 
 
 #################################################
@@ -44,12 +50,10 @@ app = Flask(__name__)
 def welcome():
     """List all available api routes."""
     return (
-        f"Available Routes:<br/>"
-        f"(Note: Paste the routes in the browsing after the default link)<br/>"
-        f"/api/v1.0/precipitation<br/>"
-        f"/api/v1.0/stations<br/>"
-        f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/start<br/>"
-        f"/api/v1.0/start/end<br/>"
-        f"(Note: to access values between a start and end date enter both dates using format: YYYY-mm-dd/YYYY-mm-dd)"
+        f"Available Routes for Hawaii Weather Data:<br/>"
+        f"-- Daily Precipitation Totals for Last Year: <a href=\"/api/v1.0/precipitation\" target=\"_blank\">/api/v1.0/precipitation</a><br/>"
+        f"-- Active Weather Stations: <a href=\"/api/v1.0/stations\" target=\"_blank\">/api/v1.0/stations</a><br/>"
+        f"-- Daily Temperature Observations for Station USC00519281 for Last Year: <a href=\"/api/v1.0/tobs\" target=\"_blank\">/api/v1.0/tobs</a><br/>"
+        f"-- Min, Average & Max Temperatures for Date Range: /api/v1.0/trip/yyyy-mm-dd/yyyy-mm-dd<br>"
+        f"(Note: to access values between a start and end data range, enter both dates using format: YYYY-mm-dd/YYYY-mm-dd)"
     )
