@@ -13,6 +13,7 @@ from flask import Flask, jsonify
 #################################################
 # Database Setup
 #################################################
+
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # reflect an existing database into a new model
@@ -31,26 +32,20 @@ session = Session(engine)
 #################################################
 # Flask Setup
 #################################################
+
 app = Flask(__name__)
-
-# Print the address and IP when the application starts
-@app.before_first_request
-def print_server_info():
-    server_address = app.config.get('SERVER_NAME')
-    server_ip = app.config.get('SERVER_HOST')
-    print(f"Flask application is running on {server_address} ({server_ip})")
-
 
 #################################################
 # Flask Routes
 #################################################
 
-# Create root route
+# TASK: Create welcome route, then list all available api routes
+# Create a welcome route
 @app.route("/")
 def welcome():
-    """List all available api routes."""
+    # List all available api routes as hyperlinks, annotated for clarity
     return (
-        "<h2>Available Routes:</h2>"
+        "<h2>Available API Routes:</h2>"
         "<ul>"
         "<li><a href=\"/api/v1.0/precipitation\">/api/v1.0/precipitation</a></li>"
         "<li><a href=\"/api/v1.0/stations\">/api/v1.0/stations</a></li>"
@@ -60,32 +55,34 @@ def welcome():
         "<ul>"
         "<li>/api/v1.0/<strong>[start]</strong>/<strong>[end]</strong></li>"
         "</ul>"
-        "<p><small><strong>Note:</strong> For the last route, replace <strong>[start]</strong> and <strong>[end]</strong> with start and end dates using the format: <strong>YYYY-mm-dd/YYYY-mm-dd</strong>.<br/>Copy and paste the result into your browser, preceded by '<strong>http://localhost:5000/</strong>'.<br/><em>Example:</em> <a href=\"/api/v1.0/2016-08-23/2017-08-23\">http://localhost:5000/api/v1.0/2016-08-23/2017-08-23</a>.</small></p>"
+        "<p><small><strong>Note:</strong> for the last route, replace <strong>[start]</strong> and <strong>[end]</strong> with start and end dates using the format: <strong>YYYY-mm-dd/YYYY-mm-dd</strong>.<br/>Copy and paste the result into your browser, preceded by '<strong>http://localhost:5000/</strong>'.<br/><em>Example:</em> <a href=\"/api/v1.0/2016-08-23/2017-08-23\">http://localhost:5000/api/v1.0/2016-08-23/2017-08-23</a>.</small></p>"
 
-        "<p><small><strong>Note:</strong> All the links assume the user employs <strong>port 5000</strong> for Flask output.<br/>If not, these links won't work, and you'll have to paste each route into your browser preceded by '<strong>http://localhost:XXXX/</strong>', where '<strong>XXXX</strong>' is your port of choice.<br/><em>Example:</em> <a href=\"/api/v1.0/2016-08-23/2017-08-23\">http://localhost:XXXX/api/v1.0/start</a>.</small></p>"
+        "<p><small><strong>Note:</strong> All the links assume the user employs <strong>port 5000</strong> for Flask output.<br/>If not, the links won't work, and you'll have to paste each route into your browser preceded by '<strong>http://localhost:XXXX/</strong>', where '<strong>XXXX</strong>' is your port of choice.<br/><em>Example:</em> <a href=\"/api/v1.0/2016-08-23/2017-08-23\">http://localhost:XXXX/api/v1.0/start</a>.</small></p>"
     )
 
-# Create a route that queries precipiation levels and dates and returns a dictionary using date as key and precipation as value
+'''TASK: Convert the query results from the precipitation analysis (i.e. retrieve only the last 12 months of data) to a dictionary using [date] as the key and [prcp] as the value. Return the JSON representation of the dictionary.'''
+# Create a precipitation route
 @app.route("/api/v1.0/precipitation")
 def precipitation():
-    # Create our session (link) from Python to the DB
+
+    # Establish session
     session = Session(engine)
 
-    """Return a list of precipitation (prcp)and date (date) data"""
-    
-    # Create new variable to store results from query to Measurement table for prcp and date columns
-    precipitation_query_results = session.query(Measurement.prcp, Measurement.date).all()
+    # Design a query to retrieve the last 12 months of precipitation data
+    last_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
 
     # Close session
-    session.close()
+    session.close() 
 
-    # Create a dictionary from the row data and append to a list of all_passengers
-        # 1. Create an empty list of precipitation query values 
-        # 2. Create for loop to iterate through query results (precipitation_query_results) 
-        # 3. Create dictionary with key "precipitation" set to prcp from precipitation_query_results and key "date" to date from precipitation_query_results
-        # 4. Append values from precipitation_dict to your original empty list precipitation_query_values 
-        # 5. Return JSON format of your new list that now contains the dictionary of prcp and date values to your browser
-    
+    # Calculate the date one year from the last date in data set
+    latest_date = dt.datetime.strptime(last_date[0], '%Y-%m-%d')
+    start_date = latest_date - dt.timedelta(days=365)
+
+    # Query the Measurement table for precipitation data within the last 12 months
+    precipitation_query_results = session.query(Measurement.prcp, Measurement.date).\
+        filter(Measurement.date >= start_date).all()
+
+    # Create a dictionary from the row data and append to a list of precipitation_query_values
     precipitaton_query_values = []
     for prcp, date in precipitation_query_results:
         precipitation_dict = {}
@@ -93,30 +90,40 @@ def precipitation():
         precipitation_dict["date"] = date
         precipitaton_query_values.append(precipitation_dict)
 
-    return jsonify(precipitaton_query_values) 
+    # Return a JSON list of precipitation_query_values
+    return jsonify(precipitaton_query_values)
 
-# Create a route that returns a JSON list of stations from the database
+# TASK: Return a JSON list of stations from the dataset
+# Create a station route
 @app.route("/api/v1.0/stations")
 def station(): 
 
+    # Establish session
     session = Session(engine)
 
-    """Return a list of stations from the database""" 
+    # Return a list of stations from the database
     station_query_results = session.query(Station.station,Station.id).all()
 
+    # Close session
     session.close()  
-    
+
+    # Create a dictionary from the row data and append to a list of stations_values   
     stations_values = []
     for station, id in station_query_results:
         stations_values_dict = {}
         stations_values_dict['station'] = station
         stations_values_dict['id'] = id
         stations_values.append(stations_values_dict)
+
+    # Return a JSON list of stations_values
     return jsonify (stations_values) 
 
-# Create a route that queries the dates and temp observed for the most active station for the last year of data and returns a JSON list of the temps observed for the last year
+'''TASK: Query the dates and temperature observations of the most-active station for the previous year of data. Return a JSON list of temperature observations for the previous year.'''
+# Create a tobs route
 @app.route("/api/v1.0/tobs") 
 def tobs():
+
+    # Establish session
     session = Session(engine)
     
     """Return a list of dates and temps observed for the most active station for the last year of data from the database""" 
