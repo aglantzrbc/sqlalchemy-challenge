@@ -24,7 +24,8 @@ The most current data was isolated by finding the last entry (8/23/2017) and wor
 **Figure 1** | *Plot of precipitation in inches in Hawaii USA from weather station observations between 8/23/2016 through 8/23/2017, with null values dropped*
 
 Further insight was provided by summary statistics, which can be found in **Table 1** below.
-**Please note that the author's findings use a slightly lower volume than the table in the starter code (2015 vs. 2021, respectively) because he eliminated NA values before tabulating.**
+
+**_Please note that the author's findings use a slightly lower volume than the table in the starter code (2015 vs. 2021, respectively) because he eliminated NA values before tabulating._**
 
 ![image](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/78cde0e3-5219-47ab-bc96-54eb704e481d)
 
