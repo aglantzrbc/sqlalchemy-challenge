@@ -21,14 +21,14 @@ The most current data was isolated by finding the last entry (8/23/2017) and wor
 
 ![Precipitation_One_Year_Interval](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/75d38e23-0307-4104-9c5e-34cf3510294e)
 
-**Figure 1** | *Summary statistics for precipitation in Hawaii USA in inches from 8/23/2016 through 8/23/2017, with null values dropped*
+**Figure 1** | *Plot of precipitation in inches in Hawaii USA from weather station observations between 8/23/2016 through 8/23/2017, with null values dropped*
 
 Further insight was provided by summary statistics, which can be found in **Table 1** below.
-**Please note that the author's findings use a slightly lower volume than the table in the starter code because he eliminated NA values before tabulating**
+**Please note that the author's findings use a slightly lower volume than the table in the starter code (2015 vs. 2021, respectively) because he eliminated NA values before tabulating.**
 
 ![image](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/78cde0e3-5219-47ab-bc96-54eb704e481d)
 
-**Table 1** | *Summary statistics of a year's worth*
+**Table 1** | *Summary statistics of the volume of weather station precipitation observations in Hawaii USA between 8/23/2016 through 8/23/2017, with null values dropped*
 
 - [**Data Engineering**](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_code_schemata.sql)
 
