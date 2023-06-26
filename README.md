@@ -17,11 +17,18 @@ In this project, the author was tasked with making use of weather and weather st
 
 - [**Analyze and Explore Climate Data**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
-The most current data was isolated by finding the last entry (8/23/2017) and working back by 365 days to get a year interval's worth of data. See **Figure 1** below for the resulting plot of precipitation data.
+The most current data was isolated by finding the last entry (8/23/2017) and working back by 365 days to get a year interval's worth of data. See **Figure 1** below for the resulting plot of precipitation data, which shows considerable volatility in volume over time.
 
 ![Precipitation_One_Year_Interval](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/75d38e23-0307-4104-9c5e-34cf3510294e)
 
-**Figure 1** | *Precipitation in Hawaii in inches from 8/23/2016 through 8/23/2017*
+**Figure 1** | *Summary statistics for precipitation in Hawaii USA in inches from 8/23/2016 through 8/23/2017, with null values dropped*
+
+Further insight was provided by summary statistics, which can be found in **Table 1** below.
+**Please note that the author's findings use a slightly lower volume than the table in the starter code because he eliminated NA values before tabulating**
+
+![image](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/78cde0e3-5219-47ab-bc96-54eb704e481d)
+
+**Table 1** | *Summary statistics of a year's worth*
 
 - [**Data Engineering**](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_code_schemata.sql)
 
