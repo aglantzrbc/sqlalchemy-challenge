@@ -47,7 +47,7 @@ The flask library was employed to create an application object, which was then d
 2. Keeping the "Measurement" variable upper-lower maintains consistency with the concurrent "Station" variable, described above.
 3. It should be noted that the "Base" variable assigned with "automap_base()" was also kept in upper-lower case, because this is what the SQLAlchemy automap function expects.
 
-- The following **static API** routes were created besides the [welcome ("/") route](http://localhost:5000/).
+	- The following **static API** routes were created besides the [welcome ("/") route](http://localhost:5000/).
 
 **_All the links assume the user runs the app.py code and employs port 5000 for Flask output._**
 
@@ -63,7 +63,7 @@ The flask library was employed to create an application object, which was then d
 
 *This provides a JSON list of the last 12 months worth of temperature observation (tobs) data from the most active station, using the tobs value and date keys.*
 
-- A **dynamic API** route was also set up.
+	- A **dynamic API** route was also set up.
 
 - Start-End route
 
