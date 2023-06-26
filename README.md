@@ -63,6 +63,13 @@ The flask library was employed to create an application object, which was then d
 
 *This provides a JSON list of the last 12 months worth of temperature observation (tobs) data from the most active station, using the tobs value and date keys.*
 
+- A **dynamic API** route was also set up.
+
+- Start-End route
+
+*This is set up with the decoration "/api/v1.0/**[start]**/**[end]**", where [start] and [end] are to be replaced with start and end dates using the format: YYYY-mm-dd/YYYY-mm-dd.* Example: http://localhost:5000/api/v1.0/2016-08-23/2017-08-23. Date ranges outside the scope of actual dates occurring in the dataset will default to the earliest and latest dates in the data.
+If only one date is provided, the output will calculate from that date through the latest record in the dataset.
+
 The *dept_name* attribute was made unique, since this is the "source of truth" for department names on all other lists. **See Figure 2 and Code Block 1, both below.**
 
 ![departments_table](https://github.com/aglantzrbc/sql-challenge/assets/127694342/d8dcbf85-f100-40f7-aad9-7cd3c24b0d61)
