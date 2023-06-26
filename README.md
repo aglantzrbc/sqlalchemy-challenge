@@ -39,7 +39,13 @@ The most active weather station out of the nine by volume of observations was id
 
 - [**Design Climate App**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
-A dedicated *EmployeeSQL_db* database was created for this project, associated with postgreSQL server 15 in pgAdmin 4 version 7.
+The flask library was employed to create an application object, which was then decorated to make API routes.
+
+**_Though establishing the "Measurement" and "Station" variable names in all lower case (i.e., "measurement" and "station") is ideal, the author didn't do this for the following reasons:_**
+
+*1. Keeping the "Station" variable upper-lower case prevents confusion with the function "station" and the attribute "Station.station", which occur toward the end of the Python code.
+2. Keeping the "Measurement" variable upper-lower maintains consistency with the concurrent "Station" variable, described above.
+3. It should be noted that the "Base" variable assigned with "automap_base() was also kept in upper-lower case, because this is what the SQLAlchemy automap function expects.*
 
 The name conversions from the ERD are as follows, in alphabetical order by diagram entity name and with the construction ERD ENTITY = *LIST*.
 
