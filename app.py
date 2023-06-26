@@ -1,4 +1,4 @@
-# Import the dependencies.
+# Import the dependencies
 import datetime as dt
 import numpy as np
 import pandas as pd
@@ -14,15 +14,20 @@ from flask import Flask, jsonify
 # Database Setup
 #################################################
 
+# Create engine to hawaii.sqlite
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
-# reflect an existing database into a new model
+# Reflect an existing database into a new model
+''' Keeping the "Base" variable upper-lower case because this is what the automap function expects '''
 Base = automap_base()
 
 # reflect the tables
 Base.prepare(engine, reflect=True)
 
 # Save references to the measurement and station tables in the database
+''' Keeping the Station variable upper-lower case to prevent confusion with the function "station" and the attribute "Station.station" below '''
+''' Keeping the Measurement variable upper-lower to maintain consistency with the concurrent Station variable '''
+
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 
@@ -33,6 +38,7 @@ session = Session(engine)
 # Flask Setup
 #################################################
 
+# Create Flask application object
 app = Flask(__name__)
 
 #################################################
@@ -45,7 +51,8 @@ app = Flask(__name__)
 # Create a welcome route
 @app.route("/")
 def welcome():
-    # List all available api routes as hyperlinks, annotated for clarity
+
+    # List all available api routes as hyperlinks, annotated and with instructions for clarity
     return (
         "<h2>Available API Routes for JSON Data:</h2>"
         "<ul>"
@@ -56,7 +63,7 @@ def welcome():
         "<ul>"
         "<li>Temperature benchmark data from variable date ranges -- /api/v1.0/<strong>[start]</strong>/<strong>[end]</strong></li>"
         "</ul>"
-        "<p><small><strong>Note:</strong> for the last route, replace <strong>[start]</strong> and <strong>[end]</strong> with start and end dates using the format: <strong>YYYY-mm-dd/YYYY-mm-dd</strong>.<br/>Copy and paste the result into your browser, preceded by '<strong>http://localhost:5000/</strong>'.<br/><em>Example:</em> <a href=\"/api/v1.0/2016-08-23/2017-08-23\">http://localhost:5000/api/v1.0/2016-08-23/2017-08-23</a>.<br>Date ranges outside the scope of actual dates occurring in the dataset will be defaulted to the earliest and latest dates in the data.</small></p>"
+        "<p><small><strong>Note:</strong> for the last route, replace <strong>[start]</strong> and <strong>[end]</strong> with start and end dates using the format: <strong>YYYY-mm-dd/YYYY-mm-dd</strong>.<br/>Copy and paste the result into your browser, preceded by '<strong>http://localhost:5000/</strong>'.<br/><em>Example:</em> <a href=\"/api/v1.0/2016-08-23/2017-08-23\">http://localhost:5000/api/v1.0/2016-08-23/2017-08-23</a>.<br>Date ranges outside the scope of actual dates occurring in the dataset will be default to the earliest and latest dates in the data.<br>If only one date is provided, the output will calculate from that date through the latest record in the dataset.</small></p>"
 
         "<p><small><strong>Note:</strong> All the links assume the user employs <strong>port 5000</strong> for Flask output.<br/>If not, the links won't work, and you'll have to paste each route into your browser preceded by '<strong>http://localhost:XXXX/</strong>', where '<strong>XXXX</strong>' is your port of choice.<br/><em>Example:</em> <a href=\"/api/v1.0/precipitation\">http://localhost:XXXX/api/v1.0/precipitation</a>.</small></p>"
     )
@@ -64,7 +71,7 @@ def welcome():
 
 #################################################
 ''' TASK PRECIPITATION: Convert the query results from the precipitation analysis (i.e. retrieve only the last 12 months of data) to a dictionary using [date] as the key and [prcp] as the value. Return the JSON representation of the dictionary. '''
-# Create a precipitation route
+# Create a precipitation route using the app Flask object
 @app.route("/api/v1.0/precipitation")
 def precipitation():
 
@@ -99,7 +106,7 @@ def precipitation():
 
 #################################################
 ''' TASK STATIONS: Return a JSON list of stations from the dataset '''
-# Create a station route
+# Create a station route using the app Flask object
 @app.route("/api/v1.0/stations")
 def station(): 
 
@@ -121,12 +128,12 @@ def station():
         stations_values.append(stations_values_dict)
 
     # Return a JSON list of stations values
-    return jsonify (stations_values) 
+    return jsonify (stations_values) # quantity of stations: 9
 
 
 #################################################
 ''' TASK TOBS: Query the dates and temperature observations of the most-active station for the previous year of data. Return a JSON list of temperature observations for the previous year. '''
-# Create a tobs route
+# Create a tobs route using the app Flask object
 @app.route("/api/v1.0/tobs")
 def tobs():
 
@@ -150,6 +157,7 @@ def tobs():
         filter(Measurement.station == most_active_station[0]).\
         filter(Measurement.date >= one_year_ago).all()
 
+    # Close session
     session.close()
 
     # Create a list of dictionaries to store the date and temperature observations
@@ -166,8 +174,10 @@ def tobs():
 ''' TASK START-END: Return a JSON list of the minimum temperature, the average temperature, and the maximum temperature for a specified start or start-end range: '''
 ''' For a specified start, calculate TMIN, TAVG, and TMAX for all the dates greater than or equal to the start date. '''
 ''' For a specified start date and end date, calculate TMIN, TAVG, and TMAX for the dates from the start date to the end date, inclusive. '''
-@app.route("/api/v1.0/<start>/<end>")
-def Start_end_date(start, end):
+# Create a start-end route using the app Flask object
+@app.route("/api/v1.0/<start>/<end>") # Decorator for when user provides both start and end dates
+@app.route("/api/v1.0/<start>") # Decorator for when user provides only start date
+def Start_end_date(start, end=None):
 
     # Establish session
     session = Session(engine)
@@ -182,7 +192,7 @@ def Start_end_date(start, end):
     if start < earliest_date:
         start = earliest_date
 
-    if end > latest_date:
+    if end is None or end > latest_date:
         end = latest_date
 
     # Query for minimum, average, and maximum tobs within the specified date range
@@ -208,6 +218,6 @@ def Start_end_date(start, end):
 
 
 #################################################
-# Make sure the Flask application is only run if the script is being executed directly
+''' Make sure the Flask application is only run if the script is being executed directly, to prevent contaminating other Flask apps running simultaneously and to facilitate reusability '''
 if __name__ == '__main__':
     app.run(debug=True) 
