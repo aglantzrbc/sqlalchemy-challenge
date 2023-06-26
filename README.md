@@ -17,13 +17,11 @@ In this project, the author was tasked with making use of weather and weather st
 
 - [**Analyze and Explore Climate Data**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
-Prior to expending the effort to create and populate tables, lists and the interrelationships of their attributes were sketched using an [Entity Relationship Diagram (ERD)](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) (see **Figure 1**, below). The author considered using [pgAdmin 4's](https://www.pgadmin.org/) built-in *ERD For Database* tool, but ultimately employed the free [*QuickDBD*](http://www.quickdatabasediagrams.com/) functionality, whose output looks less convoluted than *ERD For Database*. However, even with this choice, not every permuation of entity placement could be adequately displayed, so some [foreign key](https://en.wikipedia.org/wiki/Foreign_key) connection lines overlap, which is not optimal.
+The most current data was isolated by finding the last entry (8/23/2017) and working back by 365 days to get a year interval's worth of data. See **Figure 1** below for the resulting plot of precipitation data.
 
-The *emp_no* (Employee Number) variable served to link several, though not all, lists as a foreign key. The *dept_emp* (presumably: Department *of* Employee) list didn't have a unique attribute, so both *emp_no* and *dept_no* (Department Number) were used as a [composite key](https://en.wikipedia.org/wiki/Composite_key) (as noted by the red arrow in **Figure 1**).
+![Precipitation_One_Year_Interval](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/75d38e23-0307-4104-9c5e-34cf3510294e)
 
-![EmployeeSQL_scan](https://github.com/aglantzrbc/sql-challenge/assets/127694342/1991eadc-50ba-49c1-a5bc-58482a6166fa)
-
-**Figure 1** | *Entity Relationship Diagram (ERD) for lists and their attributes*
+**Figure 1** | *Precipitation in Hawaii in inches from 8/23/2016 through 8/23/2017*
 
 - [**Data Engineering**](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_code_schemata.sql)
 
