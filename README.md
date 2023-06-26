@@ -4,9 +4,8 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 10 SQLAlchemy
 ## TABLE OF CONTENTS
 
 1. Project Description
-   - Data Modeling
-   - Data Engineering
-   - Data Analysis
+   - Analyze and Explore Climate Data
+   - Design Climate App
 2. Installation
 3. Contributing
 4. Acknowledgements
@@ -397,12 +396,13 @@ ORDER BY
 
 ### 4. ACKNOWLEDGEMENTS
 
-In addition to using the Rutgers University (edX), postgreSQL, pgAdmin 4, and *QuickDBD* resources listed above, the author acquired query responses in OpenAI's [ChatGPT](https://chat.openai.com/) platform. Guidance on creating the README.md file was provided by Rutgers University (edX) Teaching Assistant [Robles, Ricardo](https://www.linkedin.com/in/ricardorobles-datapro/).
+In addition to using the GitHub, Rutgers University (edX), Jupyter Notebook, VSCode resources listed above, the author acquired query responses in OpenAI's [ChatGPT](https://chat.openai.com/) platform.
 
 The author also consulted code and results from similar projects publicly accessible in [GitHub](https://github.com/) repositories and recoverable through [Google](https://www.google.com/) and comparable search engines:
 
-- [Jakins, Karen](https://www.linkedin.com/in/karen-ej20/): Toronto, Ontario, Canada, April 2021. [Pewlett-Hackard-Analysis](https://github.com/Karenjakins/Pewlett-Hackard-Analysis)
-- [Martínez, Emmanuel](https://www.linkedin.com/in/emmanuelmartinezs/): Atlanta, Georgia, USA, November 2020. [Pewlett-Hackard-Analysis](https://github.com/emmanuelmartinezs/Pewlett-Hackard-Analysis)
+- [Mehta, Pragati](https://www.linkedin.com/in/pragati-mehta-%E2%99%95-3b10823/): Pennington, New Jersey, USA, September 2018. [Hawaii-Climate-Analysis-using-SQLALCHEMY](https://github.com/PragatisGitHub/Hawaii-Climate-Analysis-using-SQLALCHEMY)
+- [Thorpe, Margaret](https://www.linkedin.com/in/margaret-thorpe-datapm/): Trinidad, California, USA, May 2021. [sqlalchemy-challenge](https://github.com/MThorpester/sqlalchemy-challenge)
+- [Yousuf, Bennet](https://www.linkedin.com/in/bennetyousuf/): Dallas, Texas, USA, June 2021. [sqlalchemy-challenge](https://github.com/bennetyousuf/sqlalchemy-challenge)
 
 ### 5. LICENSES
 
