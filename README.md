@@ -55,9 +55,13 @@ The flask library was employed to create an application object, which was then d
 
 *This provides a JSON list of the last 12 months worth of precipitation data, using the date and precipitation volume keys.*
 
-- [stations route](http://localhost:5000/api/v1.0/stations)
+- [Stations route](http://localhost:5000/api/v1.0/stations)
 
 *This provides a JSON list of the nine weather stations with sequence ID and station ID keys.*
+
+- [Tobs route](http://localhost:5000/api/v1.0/tobs)
+
+*This provides a JSON list of the last 12 months worth of temperature observation (tobs) data from the most active station, using the tobs value and date keys.*
 
 The *dept_name* attribute was made unique, since this is the "source of truth" for department names on all other lists. **See Figure 2 and Code Block 1, both below.**
 
