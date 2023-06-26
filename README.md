@@ -13,9 +13,9 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 10 SQLAlchemy
 
 ### 1. PROJECT DESCRIPTION
 
-In this project, the author was tasked with helping a fictional company begin a research project about people whom the company employed during the 1980s and 1990s using archival .csv files from that period. It proceeded in three stages: **Data Modeling**, **Data Engineering**, and **Data Analysis**.
+In this project, the author was tasked with making use of weather and weather station data from Hawaii. First, the author was instructed to **analyze and explore climate data** pulled from a sqlite file using the SQLAlchemy of Python, including running summary statistics and creating visualizations via Python's other libraries. Having become familiar with the data, the author was instructed to **design a climate app** using Flask, so that users can access APIs that retrieve weather and weather station data in the form of JSON lists. 
 
-- [**Data Modeling**](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_diagram_scan.png)
+- [**Analyze and Explore Climate Data**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
 Prior to expending the effort to create and populate tables, lists and the interrelationships of their attributes were sketched using an [Entity Relationship Diagram (ERD)](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) (see **Figure 1**, below). The author considered using [pgAdmin 4's](https://www.pgadmin.org/) built-in *ERD For Database* tool, but ultimately employed the free [*QuickDBD*](http://www.quickdatabasediagrams.com/) functionality, whose output looks less convoluted than *ERD For Database*. However, even with this choice, not every permuation of entity placement could be adequately displayed, so some [foreign key](https://en.wikipedia.org/wiki/Foreign_key) connection lines overlap, which is not optimal.
 
