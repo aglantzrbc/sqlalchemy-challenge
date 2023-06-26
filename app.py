@@ -54,7 +54,7 @@ def welcome():
 
     # List all available api routes as hyperlinks, annotated and with instructions for clarity
     return (
-        "<h2>Available API Routes for JSON Data:</h2>"
+        "<h2>Available Hawaii Weather API Routes for JSON Data:</h2>"
         "<ul>"
         "<li>Last 12 months of precipitation data -- <a href=\"/api/v1.0/precipitation\">/api/v1.0/precipitation</a></li>"
         "<li>Details of temperature observation stations -- <a href=\"/api/v1.0/stations\">/api/v1.0/stations</a></li>"
@@ -63,7 +63,7 @@ def welcome():
         "<ul>"
         "<li>Temperature benchmark data from variable date ranges -- /api/v1.0/<strong>[start]</strong>/<strong>[end]</strong></li>"
         "</ul>"
-        "<p><small><strong>Note:</strong> for the last route, replace <strong>[start]</strong> and <strong>[end]</strong> with start and end dates using the format: <strong>YYYY-mm-dd/YYYY-mm-dd</strong>.<br/>Copy and paste the result into your browser, preceded by '<strong>http://localhost:5000/</strong>'.<br/><em>Example:</em> <a href=\"/api/v1.0/2016-08-23/2017-08-23\">http://localhost:5000/api/v1.0/2016-08-23/2017-08-23</a>.<br>Date ranges outside the scope of actual dates occurring in the dataset will be default to the earliest and latest dates in the data.<br>If only one date is provided, the output will calculate from that date through the latest record in the dataset.</small></p>"
+        "<p><small><strong>Note:</strong> for the last route, replace <strong>[start]</strong> and <strong>[end]</strong> with start and end dates using the format: <strong>YYYY-mm-dd/YYYY-mm-dd</strong>.<br/>Copy and paste the result into your browser, preceded by '<strong>http://localhost:5000/</strong>'.<br/><em>Example:</em> <a href=\"/api/v1.0/2016-08-23/2017-08-23\">http://localhost:5000/api/v1.0/2016-08-23/2017-08-23</a>.<br>Date ranges outside the scope of actual dates occurring in the dataset will default to the earliest and latest dates in the data.<br>If only one date is provided, the output will calculate from that date through the latest record in the dataset.</small></p>"
 
         "<p><small><strong>Note:</strong> All the links assume the user employs <strong>port 5000</strong> for Flask output.<br/>If not, the links won't work, and you'll have to paste each route into your browser preceded by '<strong>http://localhost:XXXX/</strong>', where '<strong>XXXX</strong>' is your port of choice.<br/><em>Example:</em> <a href=\"/api/v1.0/precipitation\">http://localhost:XXXX/api/v1.0/precipitation</a>.</small></p>"
     )
