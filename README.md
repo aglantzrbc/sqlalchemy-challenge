@@ -31,7 +31,13 @@ Further insight was provided by summary statistics, which can be found in **Tabl
 
 **Table 1** | *Summary statistics of the volume of weather station precipitation observations in Hawaii USA between 8/23/2016 through 8/23/2017, with null values dropped*
 
-- [**Data Engineering**](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_code_schemata.sql)
+The most active weather station out of the nine by volume of observations was identified: WAIHEE 837.5, HI US Station ID USC00519281, with 2772 observations. **Figure 2** is a 12-bin histogram showing temperature observations (tobs) for this weather station over a year. The plot is unipolar with temperatures most frequenly in the mid-70s (Fahrenheit).
+
+![Tobs](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/5c11f138-43c1-4c81-9fa0-b64a2a687561)
+
+**Figure 2** | *Histogram of temperature observations (tobs) from weather station USC0051928 between 8/23/2016 through 8/23/2017**
+
+- [**Design Climate App**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
 A dedicated *EmployeeSQL_db* database was created for this project, associated with postgreSQL server 15 in pgAdmin 4 version 7.
 
