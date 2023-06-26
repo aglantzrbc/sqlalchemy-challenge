@@ -43,18 +43,9 @@ The flask library was employed to create an application object, which was then d
 
 **_Though establishing the "Measurement" and "Station" variable names in all lower case (i.e., "measurement" and "station") is ideal, the author didn't do this for the following reasons:_**
 
-*1. Keeping the "Station" variable upper-lower case prevents confusion with the function "station" and the attribute "Station.station", which occur toward the end of the Python code.
+1. Keeping the "Station" variable upper-lower case prevents confusion with the function "station" and the attribute "Station.station", which occur toward the end of the Python code.
 2. Keeping the "Measurement" variable upper-lower maintains consistency with the concurrent "Station" variable, described above.
-3. It should be noted that the "Base" variable assigned with "automap_base() was also kept in upper-lower case, because this is what the SQLAlchemy automap function expects.*
-
-The name conversions from the ERD are as follows, in alphabetical order by diagram entity name and with the construction ERD ENTITY = *LIST*.
-
-1. Departments ERD item = *departments* list
-2. Department_of_Employee ERD item = *dept_emp* list
-3. Employees ERD item = *employees* list
-4. Managers ERD item = *dept_manager* list
-5. Salaries ERD item = *salaries* list
-6. Titles ERD item = *titles* list
+3. It should be noted that the "Base" variable assigned with "automap_base() was also kept in upper-lower case, because this is what the SQLAlchemy automap function expects.
    
 *departments list:*
 
