@@ -31,20 +31,44 @@ Further insight was provided by summary statistics, which can be found in **Tabl
 
 **Table 1** | *Summary statistics of the volume of weather station precipitation observations in Hawaii USA between 8/23/2016 through 8/23/2017, with null values dropped*
 
-- [**Data Engineering**](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_code_schemata.sql)
+The most active weather station out of the nine by volume of observations was identified: *WAIHEE 837.5, HI US Station ID USC00519281*, with 2772 observations. **Figure 2** is a 12-bin histogram showing temperature observations (tobs) for this weather station over a year. The plot is unipolar with temperatures most frequenly in the mid-70s (Fahrenheit).
 
-A dedicated *EmployeeSQL_db* database was created for this project, associated with postgreSQL server 15 in pgAdmin 4 version 7.
+![Tobs](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/5c11f138-43c1-4c81-9fa0-b64a2a687561)
 
-The name conversions from the ERD are as follows, in alphabetical order by diagram entity name and with the construction ERD ENTITY = *LIST*.
+**Figure 2** | *Histogram of temperature observations (tobs) from weather station USC0051928 between 8/23/2016 through 8/23/2017**
 
-1. Departments ERD item = *departments* list
-2. Department_of_Employee ERD item = *dept_emp* list
-3. Employees ERD item = *employees* list
-4. Managers ERD item = *dept_manager* list
-5. Salaries ERD item = *salaries* list
-6. Titles ERD item = *titles* list
-   
-*departments list:*
+- [**Design Climate App**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
+
+The flask library was employed to create an application object, which was then decorated to make [API routes](http://localhost:5000/).
+
+**_Though establishing the "Measurement" and "Station" variable names in all lower case (i.e., "measurement" and "station") is ideal, the author didn't do this for the following reasons:_**
+
+1. Keeping the "Station" variable upper-lower case prevents confusion with the function "station" and the attribute "Station.station", which occur toward the end of the Python code.
+2. Keeping the "Measurement" variable upper-lower maintains consistency with the concurrent "Station" variable, described above.
+3. It should be noted that the "Base" variable assigned with "automap_base()" was also kept in upper-lower case, because this is what the SQLAlchemy automap function expects.
+
+- The following **static API** routes were created besides the [welcome ("/") route](http://localhost:5000/).
+
+**_All the links assume the user runs the app.py code and employs port 5000 for Flask output._**
+
+- [Precipitation route](http://localhost:5000/api/v1.0/precipitation)
+
+*This provides a JSON list of the last 12 months worth of precipitation data, using the date and precipitation volume keys.*
+
+- [Stations route](http://localhost:5000/api/v1.0/stations)
+
+*This provides a JSON list of the nine weather stations with sequence ID and station ID keys.*
+
+- [Tobs route](http://localhost:5000/api/v1.0/tobs)
+
+*This provides a JSON list of the last 12 months worth of temperature observation (tobs) data from the most active station, using the tobs value and date keys.*
+
+- A **dynamic API** route was also set up.
+
+- Start-End route
+
+*This is set up with the decoration "/api/v1.0/**[start]**/**[end]**", where [start] and [end] are to be replaced with start and end dates using the format: YYYY-mm-dd/YYYY-mm-dd.* Example: http://localhost:5000/api/v1.0/2016-08-23/2017-08-23. Date ranges outside the scope of actual dates occurring in the dataset will default to the earliest and latest dates in the data.
+If only one date is provided, the output will calculate from that date through the latest record in the dataset.
 
 The *dept_name* attribute was made unique, since this is the "source of truth" for department names on all other lists. **See Figure 2 and Code Block 1, both below.**
 
