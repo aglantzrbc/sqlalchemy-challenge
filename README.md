@@ -39,15 +39,25 @@ The most active weather station out of the nine by volume of observations was id
 
 - [**Design Climate App**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
-The flask library was employed to create an application object, which was then decorated to make API routes.
+The flask library was employed to create an application object, which was then decorated to make [API routes](http://localhost:5000/).
 
 **_Though establishing the "Measurement" and "Station" variable names in all lower case (i.e., "measurement" and "station") is ideal, the author didn't do this for the following reasons:_**
 
 1. Keeping the "Station" variable upper-lower case prevents confusion with the function "station" and the attribute "Station.station", which occur toward the end of the Python code.
 2. Keeping the "Measurement" variable upper-lower maintains consistency with the concurrent "Station" variable, described above.
-3. It should be noted that the "Base" variable assigned with "automap_base() was also kept in upper-lower case, because this is what the SQLAlchemy automap function expects.
-   
-*departments list:*
+3. It should be noted that the "Base" variable assigned with "automap_base()" was also kept in upper-lower case, because this is what the SQLAlchemy automap function expects.
+
+- The following **static API** routes were created besides the [welcome ("/") route](http://localhost:5000/).
+
+**_All the links assume the user runs the app.py code and employs port 5000 for Flask output._**
+
+- [Precipitation route](http://localhost:5000/api/v1.0/precipitation)
+
+*This provides a JSON list of the last 12 months worth of precipitation data, using the date and precipitation volume keys.*
+
+- [stations route](http://localhost:5000/api/v1.0/stations)
+
+*This provides a JSON list of the nine weather stations with sequence ID and station ID keys.*
 
 The *dept_name* attribute was made unique, since this is the "source of truth" for department names on all other lists. **See Figure 2 and Code Block 1, both below.**
 
