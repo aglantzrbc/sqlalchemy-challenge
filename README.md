@@ -72,7 +72,7 @@ If only one date is provided, the output will calculate from that date through t
 
 ### 2. INSTALLATION
 
-- The [GitHub repository](https://github.com/aglantzrbc/sql-challenge) containing all project files is publicly accessible.
+- The [GitHub repository](https://github.com/a containing all project files is publicly accessible.
 - The assignment details and starter code are proprietary and located on the [Rutgers University](https://www.rutgers.edu/) ([edX](https://www.edx.org/)) Bootcamp Spot [Module 9 SQL Challenge](https://courses.bootcampspot.com/courses/3337/assignments/54030?module_item_id=961277) page.
 - All code source files were coded in [postgreSQL](https://www.postgresql.org/) version 11 through the [pgAdmin](https://www.pgadmin.org/) 4 version 7 application.
 - This project's **table schemata source file** is available in the repository under the name: [EmployeeSQL_code_schemata.sql](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_code_schemata.sql).
