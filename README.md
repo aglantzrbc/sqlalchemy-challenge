@@ -39,6 +39,8 @@ The most active weather station out of the nine by volume of observations was id
 
 - [**Design Climate App**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
+**_All the route links to follow assume the user runs the sqlalchemy-challenge_app.py code and employs port 5000 for Flask output._**
+
 The flask library was employed to create an application object, which was then decorated to make [API routes](http://localhost:5000/).
 
 **_Though establishing the "Measurement" and "Station" variable names in all lower case (i.e., "measurement" and "station") is ideal, the author didn't do this for the following reasons:_**
@@ -48,8 +50,6 @@ The flask library was employed to create an application object, which was then d
 3. It should be noted that the "Base" variable assigned with "automap_base()" was also kept in upper-lower case, because this is what the SQLAlchemy automap function expects.
 
 The following **static API** routes were created besides the [welcome ("/") route](http://localhost:5000/).
-
-**_All the links assume the user runs the app.py code and employs port 5000 for Flask output._**
 
 - [Precipitation route](http://localhost:5000/api/v1.0/precipitation)
 
