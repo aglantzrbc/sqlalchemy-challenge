@@ -77,7 +77,7 @@ A **dynamic API** route was also set up.
 - The [GitHub repository](https://github.com/aglantzrbc/sqlalchemy-challenge) containing all project files is publicly accessible.
 - The assignment details and starter code are proprietary and located on the [Rutgers University](https://www.rutgers.edu/) ([edX](https://www.edx.org/)) Bootcamp Spot [Module 10 SQLAlchemy Challenge](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336) page.
 - All code source files are Python version 3.10.9. The data source is an [.sqlite file](https://www.sqlite.org/index.html).
-- The first part of the project was coded in [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/), the second part in [VSCode](https://code.visualstudio.com/) version 1.79.2.
+- The first part of the project was coded in [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) version 6.5.2, the second part in [VSCode](https://code.visualstudio.com/) version 1.79.2.
 
 ### 3. CONTRIBUTING
 
