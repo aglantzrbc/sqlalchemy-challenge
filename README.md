@@ -19,6 +19,8 @@ In this project, the author was tasked with making use of weather and weather st
 
 The most current data was isolated by finding the last entry (8/23/2017) and working back by 365 days to get a year interval's worth of data. See **Figure 1** below for the resulting plot of precipitation data, which shows considerable volatility in volume over time.
 
+**_Though establishing variables in all lower case is ideal, the author didn't do this for the "Base" variable assigned with "automap_base()", because this is what the SQLAlchemy automap function expects._**
+
 ![Precipitation_One_Year_Interval](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/75d38e23-0307-4104-9c5e-34cf3510294e)
 
 **Figure 1** | *Plot of precipitation in inches in Hawaii USA from weather station observations between 8/23/2016 through 8/23/2017, with null values dropped*
