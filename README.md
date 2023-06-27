@@ -63,7 +63,7 @@ The following **static API** routes were created besides the [welcome ("/") rout
 
 - [Tobs route](http://localhost:5000/api/v1.0/tobs)
 
-*This provides a JSON list of the last 12 months worth of temperature observation (tobs) data from the most active station, using the tobs value and date keys.*
+*This provides a JSON list of the last 12 months worth of temperature observations (tobs) data from the most active station, using the tobs value and date keys.*
 
 A **dynamic API** route was also set up.
 
