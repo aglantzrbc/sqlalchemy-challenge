@@ -37,11 +37,11 @@ The most active weather station out of the nine by volume of observations was id
 
 ![Tobs](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/5c11f138-43c1-4c81-9fa0-b64a2a687561)
 
-**Figure 2** | *Histogram of temperature observations (tobs) from weather station ID USC0051928 between 8/23/2016 through 8/23/2017*
+**Figure 2** | *Histogram of temperature observations (tobs) from weather station ID USC0051928 between 8/23/2016 through 8/23/2017, with temperature in Fahrenheit*
 
 - [**Design Climate App**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
-**_All the route links to follow assume the user runs the sqlalchemy-challenge_app.py code and employs port 5000 for Flask output._**
+**_All the route links to follow assume the user runs the sqlalchemy-challenge_app.py code and employs an open port for Flask output._**
 
 The flask library was employed to create an application object, which was then decorated to make [API routes](http://localhost:5000/).
 
@@ -69,7 +69,7 @@ A **dynamic API** route was also set up.
 
 - Start-End route
 
-*This is set up with the decoration "/api/v1.0/**[start]**/**[end]**", where [start] and [end] are to be replaced with start and end dates using the format: **YYYY-mm-dd**/**YYYY-mm-dd**.* Example: http://localhost:5000/api/v1.0/2016-08-23/2017-08-23. Date ranges outside the scope of actual dates occurring in the dataset will default to the earliest and latest dates in the data.
+*This is set up with the decoration "/api/v1.0/**[start]**/**[end]**", where [start] and [end] are to be replaced with start and end dates using the format: **YYYY-mm-dd**/**YYYY-mm-dd**.* Example using the author's default port: http://localhost:5000/api/v1.0/2016-08-23/2017-08-23. Date ranges outside the scope of actual dates occurring in the dataset will default to the earliest and latest dates in the data.
 *If only one date is provided, the output will calculate from that date through the latest record in the dataset.*
 
 ### 2. INSTALLATION
