@@ -69,8 +69,8 @@ A **dynamic API** route was also set up.
 
 - Start-End route
 
-*This is set up with the decoration "/api/v1.0/**[start]**/**[end]**", where [start] and [end] are to be replaced with start and end dates using the format: YYYY-mm-dd/YYYY-mm-dd.* Example: http://localhost:5000/api/v1.0/2016-08-23/2017-08-23. Date ranges outside the scope of actual dates occurring in the dataset will default to the earliest and latest dates in the data.
-If only one date is provided, the output will calculate from that date through the latest record in the dataset.
+*This is set up with the decoration "/api/v1.0/**[start]**/**[end]**", where [start] and [end] are to be replaced with start and end dates using the format: **YYYY-mm-dd**/**YYYY-mm-dd**.* Example: http://localhost:5000/api/v1.0/2016-08-23/2017-08-23. Date ranges outside the scope of actual dates occurring in the dataset will default to the earliest and latest dates in the data.
+*If only one date is provided, the output will calculate from that date through the latest record in the dataset.*
 
 ### 2. INSTALLATION
 
