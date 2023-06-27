@@ -35,7 +35,7 @@ The most active weather station out of the nine by volume of observations was id
 
 ![Tobs](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/5c11f138-43c1-4c81-9fa0-b64a2a687561)
 
-**Figure 2** | *Histogram of temperature observations (tobs) from weather station USC0051928 between 8/23/2016 through 8/23/2017**
+**Figure 2** | *Histogram of temperature observations (tobs) from weather station USC0051928 between 8/23/2016 through 8/23/2017*
 
 - [**Design Climate App**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
