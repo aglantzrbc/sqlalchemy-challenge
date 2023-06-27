@@ -83,7 +83,7 @@ If only one date is provided, the output will calculate from that date through t
 
 ### 4. ACKNOWLEDGEMENTS
 
-In addition to using the GitHub, Rutgers University (edX), Jupyter Notebook, VSCode resources listed above, the author acquired query responses in OpenAI's [ChatGPT](https://chat.openai.com/) platform.
+In addition to using the GitHub, Rutgers University (edX), Jupyter Notebook, and VSCode resources listed above, the author acquired query responses in OpenAI's [ChatGPT](https://chat.openai.com/) platform.
 
 The author also consulted code and results from similar projects publicly accessible in [GitHub](https://github.com/) repositories and recoverable through [Google](https://www.google.com/) and comparable search engines:
 
