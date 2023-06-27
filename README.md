@@ -73,12 +73,9 @@ If only one date is provided, the output will calculate from that date through t
 ### 2. INSTALLATION
 
 - The [GitHub repository](https://github.com/aglantzrbc/sqlalchemy-challenge) containing all project files is publicly accessible.
-- The assignment details and starter code are proprietary and located on the [Rutgers University](https://www.rutgers.edu/) ([edX](https://www.edx.org/)) Bootcamp Spot [Module 9 SQL Challenge](https://courses.bootcampspot.com/courses/3337/assignments/54030?module_item_id=961277) page.
-- All code source files were coded in [postgreSQL](https://www.postgresql.org/) version 11 through the [pgAdmin](https://www.pgadmin.org/) 4 version 7 application.
-- This project's **table schemata source file** is available in the repository under the name: [EmployeeSQL_code_schemata.sql](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_code_schemata.sql).
-- This project's **queries source file** is available in the repository under the name: [EmployeeSQL_code_queries.sql](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_code_queries.sql).
-- The **data modeling diagram file** is [EmployeeSQL_diagram_erd.pgerd](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_diagram_erd.pgerd) and can be accessed using the [*QuickDBD*](http://www.quickdatabasediagrams.com/) functionality.
-- A **scan of the data modeling diagram file** is available with a .png extension here: [EmployeeSQL_diagram_scan.png](https://github.com/aglantzrbc/sql-challenge/blob/main/EmployeeSQL_diagram_scan.png).
+- The assignment details and starter code are proprietary and located on the [Rutgers University](https://www.rutgers.edu/) ([edX](https://www.edx.org/)) Bootcamp Spot [Module 9 SQL Challenge](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336) page.
+- All code source files are Python version 3.10.9. The data source is an [.sqlite file](https://www.sqlite.org/index.ht).
+- The first part of the project was coded in [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/), the second part in [VSCode](https://code.visualstudio.com/) version 1.79.2.
 
 ### 3. CONTRIBUTING
 
