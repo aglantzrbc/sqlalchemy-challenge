@@ -13,7 +13,7 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 10 SQLAlchemy
 
 ### 1. PROJECT DESCRIPTION
 
-In this project, the author was tasked with making use of weather and weather station data from the state of Hawaii USA. First, the author was instructed to **analyze and explore climate data** pulled from a sqlite file using the SQLAlchemy library of Python, including running summary statistics and creating visualizations via Python's other libraries. Having become familiar with the data, the author was instructed to **design a climate app** using Flask, so that users can access APIs that retrieve weather and weather station data in the form of JSON lists. 
+In this project, the author was tasked with making use of weather and weather station data from the state of Hawaii USA. First, the author was instructed to **analyze and explore climate data** pulled from a preexisting .sqlite file using the SQLAlchemy library of Python, including running summary statistics and creating visualizations via Python's other libraries. Having become familiar with the data, the author was instructed to **design a climate app** using Flask, so that users can access APIs that retrieve weather and weather station data in the form of JSON lists. 
 
 - [**Analyze and Explore Climate Data**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
