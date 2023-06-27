@@ -172,8 +172,8 @@ def tobs():
 
 #################################################
 ''' TASK START-END: Return a JSON list of the minimum temperature, the average temperature, and the maximum temperature for a specified start or start-end range: '''
-''' For a specified start, calculate TMIN, TAVG, and TMAX for all the dates greater than or equal to the start date. '''
-''' For a specified start date and end date, calculate TMIN, TAVG, and TMAX for the dates from the start date to the end date, inclusive. '''
+''' For a specified start, calculate the min, avg, and max for all the dates greater than or equal to the start date. '''
+''' For a specified start date and end date, calculate the min, avg, and max for the dates from the start date to the end date, inclusive. '''
 # Create a start-end route using the app Flask object
 @app.route("/api/v1.0/<start>/<end>") # Decorator for when user provides both start and end dates
 @app.route("/api/v1.0/<start>") # Decorator for when user provides only start date
