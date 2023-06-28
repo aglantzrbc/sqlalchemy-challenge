@@ -17,6 +17,8 @@ In this project, the author was tasked with making use of weather and weather st
 
 - [**Analyze and Explore Climate Data**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
+FILE: sqlalchemy-challenge_climate.ipynb
+
 The most current data was isolated by finding the last entry (8/23/2017) and working back by 365 days to get a year interval's worth of data. See **Figure 1** below for the resulting plot of precipitation data, which shows considerable volatility in volume over time.
 
 **_Though establishing variables in all lower case is ideal, the author didn't do this for the "Base" variable assigned with "automap_base()", because this is what the SQLAlchemy automap function expects._**
@@ -40,6 +42,8 @@ The most active weather station out of the nine by volume of observations was id
 **Figure 2** | *Histogram of temperature observations (tobs) from weather station ID USC0051928 between 8/23/2016 through 8/23/2017, with temperature in Fahrenheit*
 
 - [**Design Climate App**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
+ 
+FILE: sqlalchemy-challenge_app.py
 
 **_All the route links to follow assume the user runs the sqlalchemy-challenge_app.py code and employs an open port for Flask output._**
 
@@ -73,6 +77,9 @@ A **dynamic API** route was also set up.
 *If only one date is provided, the output will calculate from that date through the latest record in the dataset.*
 
 ### 2. INSTALLATION
+
+- Climate data analysis and exploration file: **sqlalchemy-challenge_climate.ipynb**
+- Climate app file: **sqlalchemy-challenge_app.py**
 
 - The [GitHub repository](https://github.com/aglantzrbc/sqlalchemy-challenge) containing all project files is publicly accessible.
 - The assignment details and starter code are proprietary and located on the [Rutgers University](https://www.rutgers.edu/) ([edX](https://www.edx.org/)) Bootcamp Spot [Module 10 SQLAlchemy Challenge](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336) page.
