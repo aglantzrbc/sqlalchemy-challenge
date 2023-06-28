@@ -13,7 +13,7 @@ Glantz Adam Bootcamp RUT-VIRT-DATA-PT-04-2023-U-LOLC-MWTH - Module 10 SQLAlchemy
 
 ### 1. PROJECT DESCRIPTION
 
-In this project, the author was tasked with making use of weather and weather station data from the state of Hawaii USA. First, the author was instructed to **analyze and explore climate data** pulled from a preexisting .sqlite file using the SQLAlchemy library of Python, including running summary statistics and creating visualizations via Python's other libraries. Having become familiar with the data, the author was instructed to **design a climate app** using Flask, so that users can access APIs that retrieve weather and weather station data in the form of JSON lists. 
+In this project, the author was tasked with making use of weather and weather station data from the state of Hawaii USA. First, the author was instructed to **analyze and explore climate data** pulled from a preexisting .sqlite file using the SQLAlchemy library of Python, including running summary statistics and creating visualizations via Python's other libraries. Having become familiar with the data, the author was instructed to **design a climate app** using Flask, so that users can access APIs that retrieve weather and weather station data in the form of JSON lists. *Coding was guided by the DRY ("don't repeat yourself") principle.*
 
 - [**Analyze and Explore Climate Data**](https://courses.bootcampspot.com/courses/3337/assignments/54000?module_item_id=961336)
 
@@ -35,7 +35,7 @@ Further insight was provided by summary statistics, which can be found in **Tabl
 
 **Table 1** | *Summary statistics of the volume of weather station precipitation observations in Hawaii USA between 8/23/2016 through 8/23/2017, with null values dropped*
 
-The most active weather station out of the nine by volume of observations was identified: *WAIHEE 837.5, HI US Station ID USC00519281*, with 2772 observations. **Figure 2** is a 12-bin histogram showing temperature observations (tobs) for this weather station over a year. The plot is unipolar with temperatures most frequently in the mid-70s (Fahrenheit).
+The most active weather station out of the nine by volume of observations was identified: *WAIHEE 837.5, HI US Station ID USC00519281*, with 2772 observations. **Figure 2** is a 12-bin histogram showing temperature observations ("tobs") for this weather station over a year. The plot is unipolar with temperatures most frequently in the mid-70s (Fahrenheit).
 
 ![Tobs](https://github.com/aglantzrbc/sqlalchemy-challenge/assets/127694342/5c11f138-43c1-4c81-9fa0-b64a2a687561)
 
